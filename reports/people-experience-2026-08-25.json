@@ -1,0 +1,1100 @@
+{
+  "generated_at": "2026-08-25T16:57:13+00:00",
+  "as_of": "2026-08-25",
+  "organisation": {
+    "employees_tracked": 500,
+    "vibe_distribution": {
+      "Happy": 138,
+      "Frustrated": 97,
+      "Okay": 134,
+      "Sad": 91,
+      "Excited": 40
+    },
+    "employees_below_threshold": 160,
+    "cohort_size": 30,
+    "conversations_started": 30,
+    "completed": 30,
+    "declined": 0,
+    "escalations": 10,
+    "mean_conversation_sentiment": -0.14,
+    "top_drivers": [
+      [
+        "career",
+        19
+      ],
+      [
+        "recognition",
+        19
+      ],
+      [
+        "workload",
+        17
+      ],
+      [
+        "leave_deficit",
+        15
+      ],
+      [
+        "onboarding",
+        4
+      ]
+    ],
+    "top_themes_from_replies": [
+      [
+        "team",
+        13
+      ],
+      [
+        "recognition",
+        10
+      ],
+      [
+        "manager",
+        8
+      ],
+      [
+        "compensation",
+        5
+      ],
+      [
+        "onboarding",
+        4
+      ]
+    ]
+  },
+  "escalations": [
+    {
+      "employee_id": "EMP1271",
+      "name": "Aarav Sharma",
+      "team": "Operations",
+      "priority": "P2",
+      "reason": "Employee signalled intent to leave",
+      "consented": true,
+      "flags": [
+        "attrition_intent"
+      ]
+    },
+    {
+      "employee_id": "EMP1420",
+      "name": "Anjali Joshi",
+      "team": "Consulting",
+      "priority": "P2",
+      "reason": "Employee signalled intent to leave",
+      "consented": true,
+      "flags": [
+        "attrition_intent"
+      ]
+    },
+    {
+      "employee_id": "EMP1047",
+      "name": "Rohit Kaur",
+      "team": "Consulting",
+      "priority": "P2",
+      "reason": "Employee signalled intent to leave",
+      "consented": true,
+      "flags": [
+        "attrition_intent"
+      ]
+    },
+    {
+      "employee_id": "EMP1139",
+      "name": "Meera Pillai",
+      "team": "Consulting",
+      "priority": "P2",
+      "reason": "Employee signalled intent to leave",
+      "consented": true,
+      "flags": [
+        "attrition_intent"
+      ]
+    },
+    {
+      "employee_id": "EMP1409",
+      "name": "Manav Joshi",
+      "team": "Audit",
+      "priority": "P2",
+      "reason": "Employee signalled intent to leave",
+      "consented": true,
+      "flags": [
+        "attrition_intent"
+      ]
+    },
+    {
+      "employee_id": "EMP1434",
+      "name": "Tanvi Gupta",
+      "team": "Technology",
+      "priority": "P2",
+      "reason": "Sustained negative sentiment (-0.75) across the check-in",
+      "consented": true,
+      "flags": []
+    },
+    {
+      "employee_id": "EMP1466",
+      "name": "Vikram Gupta",
+      "team": "Operations",
+      "priority": "P2",
+      "reason": "Sustained negative sentiment (-0.75) across the check-in",
+      "consented": true,
+      "flags": []
+    },
+    {
+      "employee_id": "EMP1436",
+      "name": "Kabir Bhat",
+      "team": "Technology",
+      "priority": "P2",
+      "reason": "Sustained negative sentiment (-0.75) across the check-in",
+      "consented": true,
+      "flags": []
+    },
+    {
+      "employee_id": "EMP1452",
+      "name": "Siddharth Verma",
+      "team": "Risk Advisory",
+      "priority": "P2",
+      "reason": "Sustained negative sentiment (-0.75) across the check-in",
+      "consented": true,
+      "flags": []
+    },
+    {
+      "employee_id": "EMP1122",
+      "name": "Ananya Mehta",
+      "team": "Risk Advisory",
+      "priority": "P2",
+      "reason": "Sustained negative sentiment (-0.75) across the check-in",
+      "consented": true,
+      "flags": []
+    }
+  ],
+  "employees": [
+    {
+      "employee_id": "EMP1271",
+      "name": "Aarav Sharma",
+      "team": "Operations",
+      "level": "Analyst",
+      "manager_id": "MGR006",
+      "risk_score": 75.9,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.17,
+      "drivers": [
+        "career",
+        "workload",
+        "leave_deficit",
+        "recognition"
+      ],
+      "evidence": [
+        "rating moved from 4 to 2 last cycle; latest rating 2 of 5; 4 years in role without a promotion",
+        "averaging 11.0 hours a day over the last two weeks, 2.3h above the Operations median, 33% of messages sent after hours, 4 weekend days worked"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.12,
+      "themes": [],
+      "flags": [
+        "attrition_intent"
+      ],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1420",
+      "name": "Anjali Joshi",
+      "team": "Consulting",
+      "level": "Manager",
+      "manager_id": "MGR028",
+      "risk_score": 75.0,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.31,
+      "drivers": [
+        "career",
+        "workload",
+        "leave_deficit",
+        "recognition"
+      ],
+      "evidence": [
+        "rating moved from 4 to 2 last cycle; latest rating 2 of 5; 7 years in role without a promotion",
+        "averaging 10.6 hours a day over the last two weeks, 1.9h above the Consulting median, 24% of messages sent after hours"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.12,
+      "themes": [],
+      "flags": [
+        "attrition_intent"
+      ],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1047",
+      "name": "Rohit Kaur",
+      "team": "Consulting",
+      "level": "Consultant",
+      "manager_id": "MGR018",
+      "risk_score": 71.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.33,
+      "drivers": [
+        "career",
+        "leave_deficit",
+        "recognition",
+        "workload"
+      ],
+      "evidence": [
+        "rating moved from 4 to 2 last cycle; latest rating 2 of 5",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.12,
+      "themes": [],
+      "flags": [
+        "attrition_intent"
+      ],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1139",
+      "name": "Meera Pillai",
+      "team": "Consulting",
+      "level": "Senior Consultant",
+      "manager_id": "MGR040",
+      "risk_score": 71.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.46,
+      "drivers": [
+        "career",
+        "workload",
+        "leave_deficit"
+      ],
+      "evidence": [
+        "rating moved from 4 to 2 last cycle; latest rating 2 of 5; 3 years in role without a promotion",
+        "averaging 11.0 hours a day over the last two weeks, 2.2h above the Consulting median, 29% of messages sent after hours"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.12,
+      "themes": [],
+      "flags": [
+        "attrition_intent"
+      ],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1085",
+      "name": "Arjun Iyer",
+      "team": "Technology",
+      "level": "Senior Consultant",
+      "manager_id": "MGR017",
+      "risk_score": 70.1,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.25,
+      "drivers": [
+        "leave_deficit",
+        "recognition",
+        "workload",
+        "career"
+      ],
+      "evidence": [
+        "no leave taken in the period we track, 0 day(s) total this period",
+        "no recognition on record"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.0,
+      "themes": [
+        "compensation"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager to agree a dated break; check whether leave is being discouraged."
+    },
+    {
+      "employee_id": "EMP1250",
+      "name": "Riya Gupta",
+      "team": "Audit",
+      "level": "Manager",
+      "manager_id": "MGR036",
+      "risk_score": 69.3,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.17,
+      "drivers": [
+        "workload",
+        "leave_deficit",
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "averaging 10.8 hours a day over the last two weeks, 2.0h above the Audit median, 29% of messages sent after hours",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.29,
+      "themes": [
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Review staffing on the named accounts; confirm backfills for open roles."
+    },
+    {
+      "employee_id": "EMP1409",
+      "name": "Manav Joshi",
+      "team": "Audit",
+      "level": "Senior Consultant",
+      "manager_id": "MGR001",
+      "risk_score": 67.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.54,
+      "drivers": [
+        "career",
+        "workload",
+        "leave_deficit"
+      ],
+      "evidence": [
+        "rating moved from 4 to 2 last cycle; latest rating 2 of 5; 5 years in role without a promotion",
+        "averaging 11.1 hours a day over the last two weeks, 2.3h above the Audit median, 30% of messages sent after hours, 3 weekend days worked"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.12,
+      "themes": [],
+      "flags": [
+        "attrition_intent"
+      ],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1364",
+      "name": "Nisha Bhat",
+      "team": "Audit",
+      "level": "Consultant",
+      "manager_id": "MGR027",
+      "risk_score": 66.6,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.08,
+      "drivers": [
+        "workload",
+        "leave_deficit",
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "averaging 11.0 hours a day over the last two weeks, 2.2h above the Audit median, 25% of messages sent after hours",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.29,
+      "themes": [
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Review staffing on the named accounts; confirm backfills for open roles."
+    },
+    {
+      "employee_id": "EMP1210",
+      "name": "Lakshmi Iyer",
+      "team": "Technology",
+      "level": "Consultant",
+      "manager_id": "MGR028",
+      "risk_score": 66.1,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.46,
+      "drivers": [
+        "workload",
+        "leave_deficit",
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "averaging 10.5 hours a day over the last two weeks, 1.7h above the Technology median, 28% of messages sent after hours",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.29,
+      "themes": [
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Review staffing on the named accounts; confirm backfills for open roles."
+    },
+    {
+      "employee_id": "EMP1321",
+      "name": "Priya Bhat",
+      "team": "Risk Advisory",
+      "level": "Analyst",
+      "manager_id": "MGR008",
+      "risk_score": 65.8,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.6,
+      "drivers": [
+        "workload",
+        "leave_deficit",
+        "recognition"
+      ],
+      "evidence": [
+        "averaging 10.5 hours a day over the last two weeks, 1.9h above the Risk Advisory median, 26% of messages sent after hours",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.29,
+      "themes": [
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Review staffing on the named accounts; confirm backfills for open roles."
+    },
+    {
+      "employee_id": "EMP1012",
+      "name": "Ira Verma",
+      "team": "Consulting",
+      "level": "Senior Consultant",
+      "manager_id": "MGR031",
+      "risk_score": 65.7,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.31,
+      "drivers": [
+        "workload",
+        "leave_deficit",
+        "career",
+        "recognition"
+      ],
+      "evidence": [
+        "averaging 10.8 hours a day over the last two weeks, 2.0h above the Consulting median, 25% of messages sent after hours, 3 weekend days worked",
+        "no leave taken in the period we track, 0 day(s) total this period"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.29,
+      "themes": [
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Review staffing on the named accounts; confirm backfills for open roles."
+    },
+    {
+      "employee_id": "EMP1157",
+      "name": "Karthik Bose",
+      "team": "Audit",
+      "level": "Analyst",
+      "manager_id": "MGR036",
+      "risk_score": 63.8,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.4,
+      "drivers": [
+        "leave_deficit",
+        "workload",
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "no leave taken in the period we track, 0 day(s) total this period",
+        "averaging 9.9 hours a day over the last two weeks, 1.1h above the Audit median, 24% of messages sent after hours"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.0,
+      "themes": [
+        "compensation"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager to agree a dated break; check whether leave is being discouraged."
+    },
+    {
+      "employee_id": "EMP1337",
+      "name": "Ananya Bhat",
+      "team": "Consulting",
+      "level": "Consultant",
+      "manager_id": "MGR003",
+      "risk_score": 61.2,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.27,
+      "drivers": [
+        "leave_deficit",
+        "workload"
+      ],
+      "evidence": [
+        "no leave taken in the period we track, 0 day(s) total this period",
+        "averaging 10.5 hours a day over the last two weeks, 1.8h above the Consulting median, 27% of messages sent after hours, 3 weekend days worked"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.0,
+      "themes": [
+        "compensation"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager to agree a dated break; check whether leave is being discouraged."
+    },
+    {
+      "employee_id": "EMP1435",
+      "name": "Divya Bhat",
+      "team": "Technology",
+      "level": "Analyst",
+      "manager_id": "MGR027",
+      "risk_score": 60.8,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Sad",
+      "vibe_mean": 1.33,
+      "drivers": [
+        "leave_deficit",
+        "recognition",
+        "workload",
+        "career"
+      ],
+      "evidence": [
+        "no leave taken in the period we track, 0 day(s) total this period",
+        "no recognition on record"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.0,
+      "themes": [
+        "compensation"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager to agree a dated break; check whether leave is being discouraged."
+    },
+    {
+      "employee_id": "EMP1201",
+      "name": "Siddharth Bose",
+      "team": "Audit",
+      "level": "Analyst",
+      "manager_id": "MGR008",
+      "risk_score": 59.8,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.23,
+      "drivers": [
+        "leave_deficit",
+        "workload"
+      ],
+      "evidence": [
+        "no leave taken in the period we track, 0 day(s) total this period",
+        "averaging 10.0 hours a day over the last two weeks, 1.2h above the Audit median, 27% of messages sent after hours"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.0,
+      "themes": [
+        "compensation"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager to agree a dated break; check whether leave is being discouraged."
+    },
+    {
+      "employee_id": "EMP1434",
+      "name": "Tanvi Gupta",
+      "team": "Technology",
+      "level": "Consultant",
+      "manager_id": "MGR035",
+      "risk_score": 56.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.58,
+      "drivers": [
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "no recognition on record",
+        "latest rating 2 of 5; 7 years in role without a promotion"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.5,
+      "themes": [
+        "manager",
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1466",
+      "name": "Vikram Gupta",
+      "team": "Operations",
+      "level": "Consultant",
+      "manager_id": "MGR004",
+      "risk_score": 56.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.29,
+      "drivers": [
+        "recognition",
+        "workload",
+        "career"
+      ],
+      "evidence": [
+        "last recognition was about 11 months ago",
+        "averaging 9.4 hours a day over the last two weeks"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.5,
+      "themes": [
+        "manager",
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1436",
+      "name": "Kabir Bhat",
+      "team": "Technology",
+      "level": "Analyst",
+      "manager_id": "MGR033",
+      "risk_score": 55.2,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.58,
+      "drivers": [
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "no recognition on record",
+        "rating moved from 4 to 3 last cycle; 5 years in role without a promotion"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.5,
+      "themes": [
+        "manager",
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1452",
+      "name": "Siddharth Verma",
+      "team": "Risk Advisory",
+      "level": "Senior Consultant",
+      "manager_id": "MGR001",
+      "risk_score": 54.4,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.64,
+      "drivers": [
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "no recognition on record",
+        "3 years in role without a promotion"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.5,
+      "themes": [
+        "manager",
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1122",
+      "name": "Ananya Mehta",
+      "team": "Risk Advisory",
+      "level": "Consultant",
+      "manager_id": "MGR015",
+      "risk_score": 53.8,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.69,
+      "drivers": [
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "no recognition on record",
+        "3 years in role without a promotion"
+      ],
+      "conversation": "escalated",
+      "sentiment": -0.5,
+      "themes": [
+        "manager",
+        "recognition",
+        "team"
+      ],
+      "flags": [],
+      "escalated": true,
+      "escalation_priority": "P2",
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1330",
+      "name": "Manav Sharma",
+      "team": "Operations",
+      "level": "Manager",
+      "manager_id": "MGR039",
+      "risk_score": 44.9,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.46,
+      "drivers": [],
+      "evidence": [],
+      "conversation": "completed",
+      "sentiment": 0.15,
+      "themes": [],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager check-in within the week."
+    },
+    {
+      "employee_id": "EMP1494",
+      "name": "Siddharth Gupta",
+      "team": "Audit",
+      "level": "Analyst",
+      "manager_id": "MGR003",
+      "risk_score": 43.9,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Sad",
+      "vibe_mean": 2.13,
+      "drivers": [
+        "onboarding",
+        "workload",
+        "recognition"
+      ],
+      "evidence": [
+        "onboarding rated 1.0 of 5, no mentor assigned, low role clarity, training 29.0% complete",
+        "averaging 9.6 hours a day over the last two weeks"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.08,
+      "themes": [
+        "onboarding"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Assign a buddy this week; close the outstanding induction modules."
+    },
+    {
+      "employee_id": "EMP1465",
+      "name": "Rohit Bose",
+      "team": "Tax",
+      "level": "Senior Manager",
+      "manager_id": "MGR002",
+      "risk_score": 40.5,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Sad",
+      "vibe_mean": 2.23,
+      "drivers": [
+        "onboarding"
+      ],
+      "evidence": [
+        "onboarding rated 1.0 of 5, no mentor assigned, low role clarity, training 41.0% complete"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.08,
+      "themes": [
+        "onboarding"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Assign a buddy this week; close the outstanding induction modules."
+    },
+    {
+      "employee_id": "EMP1240",
+      "name": "Priya Pillai",
+      "team": "Risk Advisory",
+      "level": "Senior Manager",
+      "manager_id": "MGR009",
+      "risk_score": 37.6,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.57,
+      "drivers": [],
+      "evidence": [],
+      "conversation": "completed",
+      "sentiment": 0.15,
+      "themes": [],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager check-in within the week."
+    },
+    {
+      "employee_id": "EMP1484",
+      "name": "Ananya Sharma",
+      "team": "Consulting",
+      "level": "Manager",
+      "manager_id": "MGR023",
+      "risk_score": 36.6,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Frustrated",
+      "vibe_mean": 1.57,
+      "drivers": [],
+      "evidence": [],
+      "conversation": "completed",
+      "sentiment": 0.19,
+      "themes": [],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager check-in within the week."
+    },
+    {
+      "employee_id": "EMP1097",
+      "name": "Ananya Nair",
+      "team": "Operations",
+      "level": "Consultant",
+      "manager_id": "MGR016",
+      "risk_score": 35.3,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Sad",
+      "vibe_mean": 2.23,
+      "drivers": [
+        "onboarding",
+        "recognition"
+      ],
+      "evidence": [
+        "onboarding rated 1.0 of 5, no mentor assigned, low role clarity, training 53.0% complete",
+        "last recognition was about 12 months ago"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.08,
+      "themes": [
+        "onboarding"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Assign a buddy this week; close the outstanding induction modules."
+    },
+    {
+      "employee_id": "EMP1043",
+      "name": "Anjali Chatterjee",
+      "team": "Risk Advisory",
+      "level": "Senior Manager",
+      "manager_id": "MGR034",
+      "risk_score": 35.2,
+      "band": "critical",
+      "selected_because": "sustained_distress",
+      "vibe_latest": "Sad",
+      "vibe_mean": 2.47,
+      "drivers": [
+        "onboarding"
+      ],
+      "evidence": [
+        "onboarding rated 2.0 of 5, no mentor assigned, low role clarity, training 49.0% complete"
+      ],
+      "conversation": "completed",
+      "sentiment": -0.08,
+      "themes": [
+        "onboarding"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Assign a buddy this week; close the outstanding induction modules."
+    },
+    {
+      "employee_id": "EMP1021",
+      "name": "Shreya Nair",
+      "team": "Risk Advisory",
+      "level": "Senior Manager",
+      "manager_id": "MGR026",
+      "risk_score": 8.9,
+      "band": "positive",
+      "selected_because": "thriving_sample",
+      "vibe_latest": "Excited",
+      "vibe_mean": 4.79,
+      "drivers": [
+        "recognition",
+        "career"
+      ],
+      "evidence": [
+        "last recognition was about 15 months ago",
+        "rating moved from 5 to 4 last cycle; 7 years in role without a promotion"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.08,
+      "themes": [
+        "manager",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Surface recent delivery to the practice lead; nominate where warranted."
+    },
+    {
+      "employee_id": "EMP1428",
+      "name": "Pooja Iyer",
+      "team": "Consulting",
+      "level": "Senior Consultant",
+      "manager_id": "MGR039",
+      "risk_score": 5.9,
+      "band": "positive",
+      "selected_because": "thriving_sample",
+      "vibe_latest": "Excited",
+      "vibe_mean": 4.89,
+      "drivers": [
+        "career"
+      ],
+      "evidence": [
+        "6 years in role without a promotion"
+      ],
+      "conversation": "completed",
+      "sentiment": 0.1,
+      "themes": [
+        "manager",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Schedule a calibration conversation explaining the rating and the path back."
+    },
+    {
+      "employee_id": "EMP1164",
+      "name": "Diya Kaur",
+      "team": "Operations",
+      "level": "Senior Consultant",
+      "manager_id": "MGR008",
+      "risk_score": 0.0,
+      "band": "positive",
+      "selected_because": "thriving_sample",
+      "vibe_latest": "Excited",
+      "vibe_mean": 4.75,
+      "drivers": [],
+      "evidence": [],
+      "conversation": "completed",
+      "sentiment": 0.08,
+      "themes": [
+        "manager",
+        "team"
+      ],
+      "flags": [],
+      "escalated": false,
+      "escalation_priority": null,
+      "next_step": "Manager check-in within the week."
+    }
+  ],
+  "selection_logic": {
+    "stages": [
+      "driver_rules",
+      "risk_score",
+      "cohort_rules"
+    ],
+    "vibe_weight": 0.55,
+    "driver_weights": {
+      "workload": 0.22,
+      "leave_deficit": 0.16,
+      "recognition": 0.16,
+      "career": 0.2,
+      "onboarding": 0.16,
+      "disengagement": 0.1
+    },
+    "cohort_rules": [
+      [
+        "sustained_distress",
+        "3+ consecutive Frustrated/Sad responses",
+        "critical",
+        "ignores cooldown"
+      ],
+      [
+        "sharp_decline",
+        "drop of 2+ zones within a week and mean <= 3.2",
+        "elevated",
+        ""
+      ],
+      [
+        "chronic_low",
+        "28-day mean vibe <= 2.4",
+        "elevated",
+        ""
+      ],
+      [
+        "critical_driver",
+        "any driver at severity >= 0.7 with mean <= 3.4",
+        "elevated",
+        ""
+      ],
+      [
+        "went_quiet",
+        "stopped answering the Vibemeter",
+        "watch",
+        ""
+      ],
+      [
+        "thriving_sample",
+        "28-day mean >= 4.3",
+        "positive",
+        "reserved share of the cohort"
+      ]
+    ]
+  }
+}
