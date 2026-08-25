@@ -1,0 +1,194 @@
+# Question bank. One block per driver the analysis can attribute a low vibe to.
+#
+# {evidence} is replaced with the exact phrase the driver rule produced, so the
+# bot opens with the specific thing the data noticed rather than a generic
+# "how are you doing?". Questions are open-ended on purpose: the brief asks the
+# bot to find the *why*, and a scale question just produces another number.
+#
+# followups are chosen by the sentiment of the previous reply, so a person who
+# says "it's fine, just a busy quarter" is not interrogated like a person who
+# says "I'm exhausted and nobody notices".
+
+meta:
+  version: 3
+  turn_budget: 7            # hard cap on bot questions per session
+  consent_required: true
+
+opening:
+  greeting: >-
+    Hi {first_name} — I'm the People Experience check-in. This is a short,
+    private conversation, and nothing you say goes to your manager without your
+    say-so. It takes about three minutes.
+  consent: Is now a good time?
+  consent_declined: >-
+    No problem. I'll close this and check back another week. If anything comes
+    up before then, your HR partner is always reachable.
+
+drivers:
+
+  workload:
+    label: Workload and hours
+    opener: >-
+      Your working pattern stood out this fortnight — {evidence}. What's been
+      driving the hours?
+    probes:
+      - Is this a short push on something specific, or has it become the normal week?
+      - Who else knows the load looks like this?
+    followups:
+      negative:
+        - That sounds heavy. What would have to come off your plate for next week to look different?
+        - Has anyone talked to you about redistributing any of it?
+      neutral:
+        - Understood. Is the current pace something you can hold for another month?
+        - What would be the first sign to you that it had tipped too far?
+      positive:
+        - Good to hear it's a deliberate push. When does it let up?
+    close: >-
+      Thanks — I'll log this as workload, without your name attached to the
+      hours unless you want it raised directly.
+
+  leave_deficit:
+    label: Rest and time off
+    opener: >-
+      One thing I noticed: {evidence}. Is that a scheduling problem, a workload
+      problem, or just how it worked out?
+    probes:
+      - Is there anything blocking you from taking a break in the next month?
+      - Would a planned break actually be restful, or would the work just pile up?
+    followups:
+      negative:
+        - That's the pattern we most want to catch early. What would need to be covered for you to take a week?
+        - Has leave been declined or discouraged at any point?
+      neutral:
+        - Makes sense. Do you have anything booked, or is it open-ended?
+      positive:
+        - Good. Is the break already in the calendar?
+    close: Thanks — I'll flag time off as the theme here.
+
+  recognition:
+    label: Recognition
+    opener: >-
+      Looking at the recognition records, {evidence}. Does that match how
+      visible your work has felt lately?
+    probes:
+      - Whose attention would you want your recent work to have reached?
+      - Is it the recognition itself, or the sense that the work isn't seen?
+    followups:
+      negative:
+        - That's worth naming. What's a recent piece of work that should have landed and didn't?
+        - Would you want that raised with your manager, or handled more quietly?
+      neutral:
+        - Fair. Is recognition something that matters much to you, or is it further down the list?
+      positive:
+        - Good — so the records are just behind reality. What's gone well recently?
+    close: Thanks — I'll note recognition and visibility.
+
+  career:
+    label: Career and performance
+    opener: >-
+      I can see {evidence}. I'd rather hear your read on it than assume — how
+      did that land?
+    probes:
+      - Was the outcome explained in a way that made sense to you?
+      - Do you know what would need to change for the next cycle?
+    followups:
+      negative:
+        - That's a hard one to sit with. Was there a conversation about it, or did you find out from the letter?
+        - What would a fair next step look like from here?
+      neutral:
+        - Understood. Do you have a clear path mapped for the next cycle?
+      positive:
+        - Good to hear you're settled on it. What are you aiming at next?
+    close: Thanks — I'll record this under career and progression.
+
+  onboarding:
+    label: Early experience
+    opener: >-
+      You're still in your first year, and the onboarding survey showed
+      {evidence}. What's been the hardest part of settling in?
+    probes:
+      - Is there someone you'd go to with a basic question?
+      - What would have made your first month easier?
+    followups:
+      negative:
+        - That's fixable and worth fixing fast. What's the single biggest gap right now?
+        - Would having a named buddy for a few weeks help?
+      neutral:
+        - Fair enough. Anything still unclear about the role itself?
+      positive:
+        - Good. What worked well that we should keep doing?
+    close: Thanks — I'll pass this to the onboarding team as a theme.
+
+  disengagement:
+    label: Checking in
+    opener: >-
+      You haven't filled the Vibemeter in a while — {evidence}. That's
+      completely fine, but I wanted to check whether it's the survey or the week.
+    probes:
+      - "Is the check-in itself useful to you, or does it feel like noise?"
+    followups:
+      negative:
+        - Understood. Is there something specific going on that the survey wouldn't capture?
+      neutral:
+        - Fair. Anything you'd want the People team to know either way?
+      positive:
+        - Good to hear. I'll keep these short.
+    close: Thanks for the reply — that's useful on its own.
+
+positive:
+  label: What's working
+  opener: >-
+    Your check-ins have been consistently high this month, and we ask about that
+    as much as the low ones. What's actually working right now?
+  probes:
+    - Is that mostly the work itself, the team, or how it's being managed?
+    - Anything here other teams should copy?
+  followups:
+    negative:
+      - "Noted — so it's better than the survey suggests, but not without friction. What's the friction?"
+    neutral:
+      - "Got it. Anything that would make it better still?"
+    positive:
+      - "That's useful. Is there a specific person or practice behind it?"
+  close: Thanks — I'll pass this on as something to repeat elsewhere.
+
+generic:
+  label: General check-in
+  opener: >-
+    Your recent check-ins have been lower than usual. I don't have a clear
+    reason from the data, so I'd rather ask — what's been going on?
+  probes:
+    - "What would make the biggest difference to your week?"
+  followups:
+    negative:
+      - "Thanks for being straight about it. How long has it felt like this?"
+    neutral:
+      - "Understood. Is there anything you'd want raised?"
+    positive:
+      - "Good to hear. Anything worth flagging anyway?"
+  close: Thanks for taking the time.
+
+closing:
+  support_offer: >-
+    Would you like me to put you in touch with your HR partner about this?
+  wrap: >-
+    That's everything from me — thanks for the honesty, it's the only way this
+    is worth doing. This goes into today's People Experience summary as a theme,
+    not a transcript.
+  escalation_notice: >-
+    I'd like to bring a person into this rather than leave it with me. With your
+    permission I'll ask your HR partner to reach out today.
+
+# Priority path. Overrides everything above, ends the scripted questions.
+crisis:
+  response: >-
+    Thank you for telling me — that matters more than the rest of this
+    check-in, and I'm not going to carry on with the questions. I'm not the
+    right kind of help here, but people who are can be reached now: our
+    Employee Assistance Programme is on the intranet and is confidential and
+    free, and your HR partner can be reached today. If you are in immediate
+    danger, please contact your local emergency number or the Tele-MANAS
+    helpline on 14416 (India, 24x7).
+  handoff: >-
+    I've flagged this to a member of the People Experience team so a person can
+    follow up directly. Is there anything you'd want them to know before they do?
