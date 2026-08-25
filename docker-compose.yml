@@ -1,0 +1,14 @@
+services:
+  bot:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      # All optional. With none set, reply analysis uses the built-in lexicon
+      # and everything still runs.
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      VIBEBOT_PROVIDER: ${VIBEBOT_PROVIDER:-}
+      VIBEBOT_MODEL: ${VIBEBOT_MODEL:-}
+    volumes:
+      - ./reports:/srv/reports

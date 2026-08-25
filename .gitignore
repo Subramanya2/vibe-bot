@@ -1,0 +1,6 @@
+#__pycache__/
+#*.pyc
+#vibebot.db
+#reports/
+#data/raw/
+#.env
