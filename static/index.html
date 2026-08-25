@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People Experience — daily check-in</title>
+<style>
+  :root{
+    --ink:#131A1F; --slate:#46535C; --mute:#7C8A92;
+    --paper:#EFF2F0; --card:#FFFFFF; --line:#D7DEDA;
+    --pine:#1F4B3F; --pine-soft:#E4EDE8;
+    --z1:#B4453A; --z2:#C77A3C; --z3:#8C8F86; --z4:#6E9B4A; --z5:#3F7D53;
+    --serif: "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans: ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono: ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.5}
+  header{border-bottom:1px solid var(--line);background:var(--card);padding:18px 24px;
+         display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+  h1{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:-.02em;margin:0}
+  .sub{color:var(--mute);font-size:12.5px}
+  .spacer{flex:1}
+  button{font:inherit;border:1px solid var(--pine);background:var(--pine);color:#fff;
+         padding:7px 14px;border-radius:2px;cursor:pointer}
+  button.ghost{background:transparent;color:var(--pine)}
+  button:disabled{opacity:.45;cursor:default}
+  main{display:grid;grid-template-columns:minmax(330px,400px) 1fr;gap:1px;background:var(--line);
+       min-height:calc(100vh - 67px)}
+  section{background:var(--paper);padding:20px 24px;overflow:auto;max-height:calc(100vh - 67px)}
+  h2{font-family:var(--serif);font-size:14px;font-weight:600;text-transform:uppercase;
+     letter-spacing:.11em;color:var(--slate);margin:0 0 14px}
+
+  /* the five Vibemeter zones are the product's own instrument — reused as the
+     org distribution bar, the per-employee history, and the colour key */
+  .zonebar{display:flex;height:9px;border-radius:1px;overflow:hidden;margin:10px 0 6px}
+  .zonebar span{display:block}
+  .zonekey{display:flex;gap:14px;font-size:11px;color:var(--mute);font-family:var(--mono)}
+  .zonekey i{width:8px;height:8px;display:inline-block;margin-right:5px;font-style:normal}
+  .ticks{display:flex;gap:2px;margin-top:6px}
+  .ticks b{width:5px;height:14px;border-radius:1px;display:block}
+
+  .row{background:var(--card);border:1px solid var(--line);border-left-width:3px;
+       padding:12px 14px;margin-bottom:8px;cursor:pointer}
+  .row:hover{border-color:var(--pine)}
+  .row.on{border-color:var(--pine);box-shadow:0 0 0 2px var(--pine-soft)}
+  .row.critical{border-left-color:var(--z1)} .row.elevated{border-left-color:var(--z2)}
+  .row.watch{border-left-color:var(--z3)}    .row.positive{border-left-color:var(--z5)}
+  .row h3{margin:0;font-size:14px;font-weight:600}
+  .meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .risk{font-family:var(--mono);font-size:17px;font-weight:600}
+  .why{color:var(--slate);font-size:12.5px;margin-top:5px}
+  .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;
+        border:1px solid var(--line);padding:2px 7px;border-radius:2px;color:var(--slate);background:var(--paper)}
+
+  .chat{background:var(--card);border:1px solid var(--line);padding:18px;min-height:340px}
+  .msg{max-width:76%;padding:10px 13px;margin-bottom:10px;border-radius:3px;white-space:pre-wrap}
+  .bot{background:var(--pine-soft);border:1px solid #CFE0D7}
+  .emp{background:var(--paper);border:1px solid var(--line);margin-left:auto}
+  .read{font-family:var(--mono);font-size:10.5px;color:var(--mute);margin:-4px 0 12px auto;
+        max-width:76%;text-align:right}
+  .composer{display:flex;gap:8px;margin-top:14px}
+  .composer input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:2px;font:inherit}
+  .banner{border-left:3px solid var(--z1);background:#FBEFEE;padding:10px 13px;margin-bottom:12px;font-size:13px}
+  .evidence{white-space:pre-line;font-family:var(--mono);font-size:11.5px;color:var(--slate);background:var(--paper);
+            border:1px solid var(--line);padding:9px 11px;margin-bottom:12px}
+  pre{white-space:pre-wrap;font-family:var(--mono);font-size:12px;background:var(--card);
+      border:1px solid var(--line);padding:16px;overflow:auto}
+  .empty{color:var(--mute);font-size:13px;padding:26px 0}
+  @media(max-width:900px){main{grid-template-columns:1fr}section{max-height:none}}
+</style>
+</head>
+<body>
+<header>
+  <h1>People Experience</h1>
+  <div class="sub" id="stamp">daily check-in</div>
+  <div class="spacer"></div>
+  <button id="run">Find today's cohort</button>
+  <button id="rep" class="ghost">Day's report</button>
+</header>
+
+<main>
+  <section>
+    <h2>Who the bot is contacting</h2>
+    <div id="dist"></div>
+    <div id="list"><p class="empty">Run the analysis to build today's cohort.</p></div>
+  </section>
+  <section id="right">
+    <h2 id="rtitle">Conversation</h2>
+    <p class="empty">Pick someone from the queue to open their check-in.</p>
+  </section>
+</main>
+
+<script>
+const ZONES = ["Frustrated","Sad","Okay","Happy","Excited"];
+const ZC = ["var(--z1)","var(--z2)","var(--z3)","var(--z4)","var(--z5)"];
+let cohort = [], session = null;
+const $ = s => document.querySelector(s);
+
+// Everything below builds HTML by interpolation, and every value in it comes
+// from the server: employee names and teams from CSV, evidence strings built
+// from those fields, and — critically — the employee's own message text, which
+// is persisted and replayed into an HR reviewer's browser. That is a stored
+// XSS path, so nothing reaches innerHTML unescaped. Quotes are escaped too
+// because some of these land inside attributes.
+const esc = v => String(v ?? "").replace(/[<>&"']/g, c =>
+  ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&#39;'}[c]));
+
+async function api(path, body){
+  const r = await fetch(path, body ? {method:"POST",headers:{"content-type":"application/json"},
+                                      body:JSON.stringify(body)} : {});
+  // Read as text first. Parsing straight to JSON turns any non-JSON response
+  // (a proxy error page, a different server on this port, an extension
+  // rewriting the body) into "Unexpected token '<'", which hides what actually
+  // came back. Show the real status and the first line of the body instead.
+  const raw = await r.text();
+  let data = null;
+  try { data = JSON.parse(raw); } catch (_) {}
+  if (data === null) {
+    const looksHtml = raw.trim().startsWith("<");
+    throw new Error(
+      `${path} returned ${r.status} ${r.statusText} as ` +
+      `${r.headers.get("content-type") || "unknown type"}, not JSON` +
+      (looksHtml ? " — an HTML page came back. Is the API server actually on this port?"
+                 : ` — body began: ${raw.slice(0, 120)}`));
+  }
+  if (!r.ok) throw new Error(data.detail || r.statusText);
+  return data;
+}
+
+$("#run").onclick = async () => {
+  $("#run").disabled = true; $("#run").textContent = "Analysing…";
+  try{
+    const d = await api("/api/analyse", {capacity:25});
+    cohort = d.cohort; renderList(); await renderDist();
+  }catch(e){ $("#list").innerHTML = `<p class="empty">${e.message}</p>`; }
+  $("#run").disabled = false; $("#run").textContent = "Find today's cohort";
+};
+
+async function renderDist(){
+  const rep = await api("/api/report");
+  const dist = rep.organisation.vibe_distribution, total = Object.values(dist).reduce((a,b)=>a+b,0)||1;
+  $("#stamp").textContent = `${rep.as_of} · ${rep.organisation.employees_tracked} employees tracked`;
+  $("#dist").innerHTML =
+    `<div class="zonebar">${ZONES.map((z,i)=>
+      `<span style="width:${(dist[z]||0)/total*100}%;background:${ZC[i]}" title="${z}: ${dist[z]||0}"></span>`).join("")}</div>
+     <div class="zonekey">${ZONES.map((z,i)=>
+      `<span><i style="background:${ZC[i]}"></i>${z} ${dist[z]||0}</span>`).join("")}</div>`;
+}
+
+function renderList(){
+  $("#list").innerHTML = cohort.map((c,i)=>`
+    <article class="row ${esc(c.band)}" data-i="${i}">
+      <div class="meta"><h3>${esc(c.name)}</h3><span class="risk">${esc(c.risk_score)}</span></div>
+      <div class="why">${esc(c.team)} · ${esc(c.level)} · selected by <b>${esc(c.selected_because||c.trigger)}</b></div>
+      <div class="chips">${(c.drivers||[]).map(d=>`<span class="chip">${esc(d.code)}</span>`).join("")}</div>
+    </article>`).join("");
+  document.querySelectorAll(".row").forEach(el=>el.onclick=()=>openChat(+el.dataset.i, el));
+}
+
+async function openChat(i, el){
+  document.querySelectorAll(".row").forEach(r=>r.classList.remove("on"));
+  el.classList.add("on");
+  const c = cohort[i];
+  session = await api("/api/chat/start", {employee_id:c.employee_id});
+  $("#rtitle").textContent = `Check-in — ${c.name}`;
+  const ev = (c.drivers||[]).map(d=>`${esc(d.label)}: ${esc(d.evidence)}`).join("\n");
+  $("#right").innerHTML = `<h2 id="rtitle">Check-in — ${esc(c.name)}</h2>
+    ${ev ? `<div class="evidence">${ev}</div>` : ""}
+    <div class="chat" id="chat"></div>
+    <div class="composer">
+      <input id="msg" placeholder="Reply as ${esc((c.name||"").split(" ")[0])}…" autocomplete="off">
+      <button id="send">Send</button>
+    </div>`;
+  $("#send").onclick = send;
+  $("#msg").onkeydown = e => { if(e.key==="Enter") send(); };
+  paint();
+}
+
+function paint(){
+  const box = $("#chat");
+  box.innerHTML = (session.escalation
+      ? `<div class="banner"><b>Escalated ${esc(session.escalation.priority)}</b> — ${esc(session.escalation.reason)}</div>` : "")
+    + session.turns.map(t=>{
+        const bubble = `<div class="msg ${t.role==="bot"?"bot":"emp"}">${esc(t.text)}</div>`;
+        if(!t.analysis) return bubble;
+        const a = t.analysis;
+        const bits = [`${esc(a.tone)} ${a.sentiment>0?"+":""}${esc(a.sentiment)}`]
+          .concat((a.themes||[]).map(esc), (a.flags||[]).map(f=>`⚑ ${esc(f)}`));
+        return bubble + `<div class="read">${bits.join(" · ")}</div>`;
+      }).join("");
+  box.scrollTop = box.scrollHeight;
+  const done = session.state === "closed";
+  $("#msg").disabled = done; $("#send").disabled = done;
+  if(done) $("#msg").placeholder = "Check-in closed.";
+}
+
+async function send(){
+  const input = $("#msg"), text = input.value.trim();
+  if(!text) return;
+  input.value = ""; input.disabled = true;
+  session = await api("/api/chat/message", {session_id:session.session_id, message:text});
+  input.disabled = false; input.focus(); paint();
+}
+
+$("#rep").onclick = async () => {
+  // This endpoint returns text/plain markdown, so there is no JSON parse to
+  // fail on — an error page would be rendered verbatim as the report. Check
+  // the status and the content type before trusting the body.
+  const r = await fetch("/api/report?fmt=markdown");
+  const body = await r.text();
+  const ctype = r.headers.get("content-type") || "";
+  if (!r.ok || !ctype.startsWith("text/plain")) {
+    $("#right").innerHTML =
+      `<h2>Daily report</h2><p class="err">Could not load the report: ` +
+      `/api/report returned ${r.status} ${r.statusText} as ${ctype || "unknown type"}.` +
+      (ctype.includes("html")
+        ? ` An HTML page came back instead of the report, which means this page is
+           not being served by the FastAPI app. Start it with
+           <code>uvicorn app.main:app</code> and open the port it prints.`
+        : "") + `</p>`;
+    return;
+  }
+  $("#right").innerHTML = `<h2>Daily report</h2><pre>${esc(body)}</pre>`;
+};
+</script>
+</body>
+</html>
