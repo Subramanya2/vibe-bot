@@ -6,3 +6,4 @@ data/raw/
 .env
 self.md
 SELF.md
+.venv/
