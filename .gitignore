@@ -1,6 +1,8 @@
-#__pycache__/
-#*.pyc
-#vibebot.db
-#reports/
-#data/raw/
-#.env
+__pycache__/
+*.pyc
+vibebot.db
+reports/
+data/raw/
+.env
+self.md
+SELF.md
