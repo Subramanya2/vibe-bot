@@ -4,6 +4,6 @@ vibebot.db
 reports/
 data/raw/
 .env
-self.md
+self*.md
 SELF.md
 .venv/
